@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+/*对整体页面设置间距为0，边距为0*/
+*{
+	margin:0px;
+	padding:0px;
+	border:0;
+	font-size:12px;
+	font-family:"宋体";
+	
+}
+/*设置页面背景属性*/
+body{
+	background:#580000;
+}
+/*设置默认情况下层的属性*/
+#all{
+	width:1007px;
+	margin:0px auto;
+}
+/*设置头部相关属性*/
+#head{
+	width:960px;
+	height:110px;
+	margin:0 auto;	
+}
+
+#head img{
+	float:left;}
+#head span{
+	float:right;
+	margin:40px 40px 0px 0px;
+	color:#FFFFFF;
+	font-size:36px;
+}
+/*导航部分设置*/
+#nav{
+	width:1007px;
+	height:65px;
+	background:url(images/dh.jpg) no-repeat top center;
+	clear:both;
+	margin:0 auto;
+}
+#nav ul{
+	height:35px;
+	padding-top:30px;
+	margin-left:80px;
+}
+#nav li{
+	list-style-type:none;
+	float:left;
+	width:80px;
+	margin-left:40px;
+	text-align:center;
+	font-family:"黑体";
+	font-size:14px;
+	line-height:22px;
+
+}
+#nav li a{
+	color:#fff7b3;
+	text-decoration:none;
+	display:block;
+}
+#nav li a:hover{
+	color:#8b1f1c;
+	background-image:url(images/nav_bj.gif);
+	background-repeat:no-repeat;
+	line-height:24px;
+	}
+	
+	
+#main{
+	width:960px;
+	height:auto;
+	margin:0 auto;
+
+}
+#all{
+	width:940;
+	margin:30px auto;
+	}
+P{
+	font-size:24px;
+	color:#FFF;
+	}

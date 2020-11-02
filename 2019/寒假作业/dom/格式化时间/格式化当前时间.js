@@ -1,0 +1,13 @@
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDay();
+var hour = date.getHours();
+var minute = date.getMinutes();
+var second = date.getSeconds();
+month = month > 9 ? month : "0" + month;
+day = day > 9 ? day : "0" + day
+hour = hour > 9 ? hour : "0" + hour;
+minute = minute > 9 ? month : "0" + minute
+second = second > 9 ? second : "0" + second;
+var time = year + " - " + month + " - " + day +"     "+ hour + ": " + minute + ": " + second

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wai {
+            width: 455px;
+            height: 300px;
+            margin: 200px auto;
+            background-image: url(./images/3.jpg);
+            /* transform-style: preserve-3d; */
+
+        }
+
+        .left {
+            float: left;
+            width: 50%;
+            height: 100%;
+            background-image: url(./images/bg.png);
+            transition: all 2s;
+            transform-origin: left center;
+            transform-style: preserve-3d;
+        }
+
+        .right {
+            float: right;
+            width: 50%;
+            height: 100%;
+            background-image: url(./images/bg.png);
+            transition: all 2s;
+            transform-style: preserve-3d;
+            transform-origin: right center;
+        }
+
+        .wai:hover .left {
+            transform: rotateY(180deg);
+        }
+
+        .wai:hover .right {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wai">
+        <div class="left">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+</body>
+
+</html>

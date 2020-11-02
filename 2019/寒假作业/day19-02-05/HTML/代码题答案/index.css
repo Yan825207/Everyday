@@ -1,0 +1,204 @@
+
+nav{
+    width: 100%;
+    height: calc(185rem / 75);
+    background-image: url(./images/banner.jpg) ;
+}
+.denglu{
+    position: relative;
+    width: 100%;
+    height: calc(185rem / 75);
+    padding-top: calc(75rem / 75);
+    box-sizing: border-box;
+    background-color: #fafafa;
+}
+.denglu h2{
+    font-size: calc(30rem / 75);
+    text-align: center;
+    color: 000;
+    font-weight: 600;
+}
+.denglu p{
+    font-size: (24rem / 75);
+    color: #aaa;
+    margin-top: calc(22rem / 75);
+    text-align: center;
+}
+.tx{
+    width: calc(122rem / 75);
+	height: calc(122rem/ 75);
+    position: absolute;
+    top: calc(-62rem / 75);
+    left: calc(315rem / 75);
+    margin: auto;
+    border: solid 4px #fff;
+    border-radius: 50%;
+    background-image: url(./images/person.jpg);
+    background-size:calc(122rem / 75) calc(122rem/ 75); 
+}
+.list ul{
+    width: calc(750rem / 75);
+    height: calc(438rem / 75);
+    overflow: hidden;
+    border-top: 1px solid #e4e4e4;
+}
+.list li{
+    float: left;
+    width: 33.333333%;
+    height:50%;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    box-sizing: border-box;
+}
+.list li span{
+    position: relative;
+    display: block;
+    font-size:calc(28rem / 75);
+    margin-top: calc(157rem / 75);
+    text-align: center;
+    font-weight: 500;
+}
+.list span::after{
+    position: absolute;
+    top: calc(-116rem / 75);
+    left: 50%;
+    transform: translate(-50%);
+    content: "";
+    width: calc(96rem / 75);
+    height: calc(96rem / 75);
+    background-image: url(./images/icons.png);
+    background-size: calc(520rem / 75);
+    background-position: 0 calc(-60rem / 75) ;
+
+}
+.list li:nth-child(2) span::after{
+    background-position:  calc(-200rem / 75) calc(-60rem / 75);
+}
+.list li:nth-child(3) span::after{
+    background-position:calc(-400rem / 75) calc(-60rem / 75) ;
+}
+.list li:nth-child(4) span::after{
+    background-position:0 calc(-200rem / 75) ;
+}
+.list li:nth-child(5) span::after{
+    background-position:calc(-200rem / 75) calc(-200rem / 75) ;
+}
+.list li:nth-child(6) span::after{
+    background-position:calc(-400rem / 75) calc(-200rem / 75) ;
+}
+.sz h1{
+    width: 100%;
+    height: calc(80rem / 75);
+    font-size: calc(28rem / 75);
+    line-height: calc(80rem / 75);
+    padding-left: calc(20rem / 75);
+    border-bottom:  1px solid #e4e4e4;
+    box-sizing: border-box;
+    font-weight: 700;
+    margin: 0;
+}
+.sz-list{
+    overflow: hidden;
+}
+.sz-list-left{
+    float: left;
+    width: calc(120rem / 75);
+}
+
+.sz-list-left li{
+    position: relative;
+    width: 100%;
+    height: calc(100rem  / 75);
+}
+.sz-list-left li span{
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    position: absolute;
+    display: inline-block;
+    width: calc(52rem / 75);
+    height: calc(46rem / 75);
+  
+    background-image: url(./images/icons.png);
+    background-size: calc(520rem / 75);
+    background-position: 0 calc(-360rem / 75);
+}
+.sz-list-left li:nth-child(2) span{
+    background-position: calc(-100rem / 75) calc(-360rem / 75);
+}
+.sz-list-left li:nth-child(3) span{
+    background-position: calc(-200rem / 75) calc(-360rem / 75);
+}
+.sz-list-right{
+    float: left;
+    margin-bottom: calc(28rem / 75);
+}
+.sz-list-right li{
+    position: relative;
+
+    width: calc(630rem / 75);
+    height: calc(100rem / 75);
+    border-bottom: 1px solid #e4e4e4;
+}
+.sz-list-right li::after{
+    position: absolute;
+        top: 50%;
+    right: calc(30rem / 75);
+    transform: translate(0,-50%);
+    content: "";
+    width: calc(20rem / 75);
+    height: calc(36rem / 75);
+    background-image: url(./images/arrow.png);
+    background-size: calc(20rem / 75);
+
+}
+.sz-list-right li span{
+    height: 100%;
+    line-height: calc(100rem / 75);
+    font-size: calc(30rem / 75);
+    color: #666;
+}
+.bottom{
+    width: 100%;
+    height: calc(100rem / 75);
+    border-top: 1px solid #e4e4e4;
+}
+.bottom ul{
+    display: flex;
+    height: 100%;
+}
+.bottom li{
+    position: relative;
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    font-size: calc(28rem / 75);
+    padding-top: calc(70rem / 75);
+    box-sizing: border-box;
+
+
+}
+.bottom li::after{
+    position: absolute;
+    top: calc(12rem / 75);
+    left: 50%;
+    transform: translate(-50%,0);
+    content: "";
+    width: calc(50rem / 75);
+    height: calc(50rem / 75);
+    background-image: url(./images/icons.png);
+    background-size: calc(520rem / 75);
+    background-position: 0 calc(-460rem / 75);
+}
+.bottom li:nth-child(2)::after{
+    background-position: calc(-100rem / 75) calc(-460rem / 75);
+}
+.bottom li:nth-child(3)::after{
+    background-position: calc(-200rem / 75) calc(-460rem / 75);
+}
+.bottom li:nth-child(4)::after{
+    background-position: calc(-300rem / 75) calc(-460rem / 75);
+}
+.bottom li:nth-last-child(1){
+    color: #fa4665;
+}

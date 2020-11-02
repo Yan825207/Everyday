@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //   <!-- 7.一个加油站为了鼓励车主多加油，所以加的多有优惠。
+        //   92号汽油，每升6元；如果大于20升，那么超出部分每升5.9；
+        //   95号汽油，每升7元；如果大于30升，那么超出部分每升6.95
+        //   编写JS程序，用户输入自己的汽油编号，然后输入自己加多少升，弹出价格。 -->
+        // 定义变量接受汽油型号
+        var xh = prompt('请输入型号')
+        var l = prompt('请输入升数')
+        // 定义价格
+        var money
+        // 如果输入的是92号
+        if (xh == 92) {
+            //  定义变量接受升数
+
+
+
+            // 如果小于20升则每升6元
+            if (l <= 20) {
+                money = l * 6
+                //    console.log(monry+'元')
+                //    如果大于20升，那么超出部分每升5.9；
+            } else if (l > 20) {
+                money = 20 * 6 + (l - 20) * 5.9
+            }
+        }
+
+        // 如果输入的是95号则   95号汽油，每升7元；如果大于30升，那么超出部分每升6.95
+        else if (xh == 95) {
+            // 判断如果小于30则每升7元
+            if (l < 30) {
+                money = l * 7
+            }
+            // 如果大于30升，那么超出部分每升6.95
+            else if (l > 30) {
+                money = 30 * 7 + (l - 30) * 6.95
+            }
+        }
+        alert(money)
+    </script>
+</body>
+
+</html>

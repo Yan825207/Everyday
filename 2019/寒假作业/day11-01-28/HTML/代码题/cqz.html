@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        div,
+        img {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            width: 250px;
+            height: 170px;
+            margin: 300px auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        @keyframes xuanzhuan-1 {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(360deg);
+                transform-origin: right;
+                transition: all 2s;
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes xuanzhuan-2 {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(300deg);
+                transform-origin: right;
+                transition: all 2s;
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes xuanzhuan-3 {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(240deg);
+                transform-origin: right;
+                transition: all 2s;
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes xuanzhuan-4 {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(180deg);
+                transform-origin: right;
+                transition: all 2s;
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes xuanzhuan-5 {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(120deg);
+                transform-origin: right;
+                transition: all 2s;
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes xuanzhuan-6 {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(60deg);
+                transform-origin: right;
+                transition: all 2s;
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        div:hover img:nth-last-child(1) {
+            animation: xuanzhuan-1 3s;
+        }
+
+        div:hover img:nth-last-child(2) {
+            animation: xuanzhuan-2 3s;
+
+        }
+
+        div:hover img:nth-last-child(3) {
+            animation: xuanzhuan-3 3s;
+
+        }
+
+        div:hover img:nth-last-child(4) {
+            animation: xuanzhuan-4 3s;
+
+        }
+
+        div:hover img:nth-last-child(5) {
+            animation: xuanzhuan-5 3s;
+
+        }
+
+        div:hover img:nth-last-child(6) {
+            animation: xuanzhuan-6 3s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./images/6.jpg" alt="">
+        <img src="./images/5.jpg" alt="">
+        <img src="./images/4.jpg" alt="">
+        <img src="./images/3.jpg" alt="">
+        <img src="./images/2.jpg" alt="">
+        <img src="./images/1.jpg" alt="">
+    </div>
+</body>
+
+</html>

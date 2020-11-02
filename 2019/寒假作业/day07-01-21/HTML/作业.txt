@@ -1,0 +1,108 @@
+1.关于盒子宽度下列正确的是（D）
+
+(A) 盒子宽：就是width的大小
+
+(B) 盒子宽： padding-left + width + padding-right 
+
+(C) 盒子宽： border-left + width + border-right 
+
+(D) 盒子宽： border-left+ padding-left + width + padding-right + border-right
+
+
+2.关于盒子高度下列正确的是（D）
+
+(A) 盒子高：就是height的大小
+
+(B) 盒子高：padding-top +height + padding-bottom 
+
+(C) 盒子高：border-top + height + border-bottom
+
+(D) 盒子高：border-top + padding-top +height + padding-bottom + border-bottom
+
+3关于根据下列代码计算 盒子宽高下列说法正确的是（B）
+
+		div {
+
+​			width: 200px;
+
+​			height: 200px;
+
+​			border: 1px solid #000000;
+
+​			border-top: 5px solid blue;
+
+​			padding: 50px;
+
+​			padding-left: 100px;
+
+​		}
+
+(A) 宽度为200px 高度为200px
+
+(B) 宽度为352px 高度为306px
+
+(C) 宽度为302px 高度为307px
+
+(D) 宽度为302px 高度为252px
+
+
+4.外边距合并及解决方案
+两个盒子上下排列，给上盒子有个margin-bottom，下盒子margin-top，盒子之间的距离按最大长度算，不是两数之和，解决方案：只给一个margin
+5.用公式写两个列子
+  /*外盒尺寸计算（元素空间尺寸）*/
+  Element空间高度 = content height + padding + border + margin
+  Element 空间宽度 = content width + padding + border + margin
+  /*内盒尺寸计算（元素实际大小）*/
+  Element Height = content height + padding + border （Height为内容高度）
+  Element Width = content width + padding + border （Width为内容宽度）
+
+6.什么是浮动？以及清除浮动的方法（4种）
+脱离标准流，使两个块级元素在同一行显示。
+1 . 额外标签法
+ 2 .给父元素添加overflow:hidden;
+ 3单伪元素清楚浮动：
+	         .clearfix:after{
+	          concent=“”
+	            display：block；
+	           clear:both;
+	           visibilty:hidden;
+	          }
+	         .clearfix{
+		*zoom : 1;
+		}
+
+双伪元素清楚浮动：
+.clearfix :before,
+.clearfix :after{ 
+       concent=" "
+      display:table; 
+      }
+.clear:after{
+clear :both;
+}
+.clearfix{
+ *zoom : 1;l
+}
+7.定位都有哪些，以及各自的特点
+相对定位 ： position:relative
+       	相对自己定位，相对定位以前的位置也不能被占用
+绝对定位 ： position：absolute
+	相对父元素定位 ，绝对定位不占有原来的位置
+固定定位 ： position： fixed  对于浏览器可视区域定位，不占有原来位置
+粘性定位 ： position：strick
+  	 相对于浏览器可视区域定位， 占有原来位置。
+
+8元素的显示与隐藏（display 、visibility、overflow）的特点？
+display ： 隐藏后不占有原来位置
+visibilty： 隐藏后还占有原来位置
+overflow： 溢出隐藏，
+
+9.单行出现省略号与多行出现省略号的方法？
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+多行
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;

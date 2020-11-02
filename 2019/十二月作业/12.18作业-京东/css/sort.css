@@ -1,0 +1,140 @@
+header {
+  position: fixed;
+  width: 100%;
+  height: 45px;
+  border-bottom: 1px solid #ccc;
+  background-image: url(../image/header-bg.png);
+  background-repeat: repeat-x;
+}
+
+.header-back {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 14px;
+  height: 20px;
+  transform: translateY(-50%);
+  background-position: -24px 0px;
+}
+
+.header-search {
+  width: 100%;
+  height: 44px;
+  padding: 0 40px;
+}
+
+.header-search input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 7px;
+  padding: 0 5px;
+}
+
+.header-menu {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  background-position: -61px 0px;
+}
+
+
+main {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-top: 45px;
+}
+
+main aside {
+  width: 90px;
+  height: 100%;
+  background-color: red;
+  overflow: hidden;
+}
+
+aside ul {
+  width: 100%;
+  height: 100%;
+  
+}
+
+aside li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+
+main section {
+  flex: 1;
+  background-color: #FFF;
+  padding: 0 10px;
+}
+main section h3{
+  width: 100%;
+  height: 45px;
+  color: #999;
+  line-height: 45px;
+  font-size: 14px;
+}
+.tuijian ul{
+  overflow: hidden;
+  width: 100%;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+.tuijian li{
+  float: left;
+  width: 33.333333%;
+  height: 50px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+
+
+  text-align: center;
+  line-height: 50px;
+  font-size: 12px;
+}
+.sort{
+  width: 100%;
+}
+.sort h3{
+  width: 100%;
+  height: 45px;
+  color: #999;
+  line-height: 45px;
+  font-size: 14px;
+}
+.sort ul{
+  width: 100%;
+  overflow: hidden;
+}
+.sort li{
+  float: left;
+  width: 33.33333%;
+}
+.sort li img{
+  width: 100%;
+}
+.sort span{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}

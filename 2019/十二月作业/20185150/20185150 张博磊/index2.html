@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>雪中悍刀行</title>
+<link href="style2.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+var NowFrame=1;
+	function disp(){
+			for(var i=1;i<=2;i++){
+				if(i==NowFrame)
+				document.getElementById("img"+i).style.display='';
+				else
+				document.getElementById("img"+i).style.display='none';
+				}
+				{
+					if(NowFrame==2)
+					NowFrame=1;
+					else
+					NowFrame++;}
+				theTimer=setTimeout('disp()',200);
+		}
+</script>
+</head>
+<body onLoad="disp();">
+<div id="all">
+  <div id="head"> <img src="images/2018030715184064.png" alt="logo" width="110" height="110" /><span>雪中悍刀行</span></div>
+  
+ 
+    <div id="nav">
+    <ul>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">人物介绍</a></li>
+      <li><a href="#">故事背景</a></li>
+      <li><a href="#">各方势力</a></li>
+      <li><a href="#">联系我们</a></li>
+    </ul>
+  </div>
+  </div>
+  
+  <div id="main">
+    <img src="images/img1.jpg" style="display:none"id="img1" border="0" width="925" height="250">
+    <img src="images/img2.jpg" style="display:none"id="img2" border="0" width="925" height="250"/>
+    </div>
+    
+    
+    
+  <div id="all">
+	<h2>人物介绍:</h2>	
+    <ul>
+      <li><a href="#">徐骁：你想要江湖，我便给你一座。你想要天下，我就给你一个。而我呢，就想要个儿子，你给不给？</a></li>
+      <li><a href="index3.html">徐凤年:本世子若是身死，徐骁就要教你广陵满城尽悬北凉刀，信否？</a><li>
+      <li><a href="#">李淳罡：天不生我李淳罡，剑道万古如长夜。</a></li>
+      <li><a href="#">褚禄山：我褚禄山一生可能会换很多东西，但唯一不会换的就是主子！</a></li>
+      <li><a href="#">韩生宣：擅以指玄杀天象，陆地神仙境下几乎无敌，指玄境第二，仅次于桃花剑神邓太阿。</a></li>
+      <li><a href="#">曹长卿：西楚棋待诏，落子太安城。</a></li>
+      <li><a href="#">缺门牙的黄阵图：给公子上酒。</a></li>
+      <li><a href="#">温华：我温华的剑，是你教的，我废去全身武功，再还你一条手臂一条腿。</a></li>
+      <li><a href="#">洪洗象：今日解签,宜下江南。</a></li>
+      <li><a href="#">陈芝豹：北凉苦,最苦是白衣。</a></li>
+      <li><a href="#">董卓：董家儿郎，马上刀，马下矛，死马背，死马旁。家中小娘莫要哭断肠，生儿还做董家郎！</a></li>
+      <li><a href="#">隋斜谷：天上剑仙三百万，见我也需尽低眉！</a></li>
+    </ul>
+    </div>
+
+    
+   
+</body>
+</html>

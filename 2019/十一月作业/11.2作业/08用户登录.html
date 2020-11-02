@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <script>
+        // 8. 收先接收用户输入的用户名，、// 判断该用户名是否是admin,如果不是直接程序终止，
+        // 如果是那么再次提示让用户输入密码,如果密码是88888,那么提示登录成功，否则提示登录失败
+
+        // 判断用户名是否正确
+        // 如果正确提示用户输入密码
+        if (name == 'admin') {
+            //  定义变量接受密码
+            let password = prompt('请输入密码')
+
+
+            // 判断密码是否正确
+            if (password == '88888') {
+                // 正确打印登录成功
+                alert('登录成功')
+            }
+            // 否则打印登录失败
+            else {
+                alert('登录失败')
+            }
+        }
+        // 如果不正确终止程序 
+        else {
+
+        }
+    </script>
+</body>
+
+
+
+</html>

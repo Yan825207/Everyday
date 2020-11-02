@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2. 若用户猜的小于50，提示：猜小了；否则提示猜大了；猜中了，提示：中奖了(不能继续猜谜)，(用while实现)
+
+// 循环
+
+while (true) {
+    var num=prompt("请输入数字")
+    if(num<50){
+        alert("猜小了")
+    }
+    if(num>50){
+        alert("猜大了")
+    }
+    if(num==50){
+        alert("中奖了")
+        break
+    }
+}
+// 定义变量接受用户输入值
+// 判断如果小于50则打猜小了
+// 大于50则提示猜大了
+// 等于50则打印中奖了，并跳出循环
+
+    </script>
+</body>
+</html>

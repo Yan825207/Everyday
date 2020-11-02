@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>雪中悍刀行</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+var NowFrame=1;
+	function disp(){
+			for(var i=1;i<=2;i++){
+				if(i==NowFrame)
+				document.getElementById("img"+i).style.display='';
+				else
+				document.getElementById("img"+i).style.display='none';
+				}
+				{
+					if(NowFrame==2)
+					NowFrame=1;
+					else
+					NowFrame++;}
+				theTimer=setTimeout('disp()',200);
+		}
+</script>
+</head>
+<body onLoad="disp();">
+<div id="all">
+  <div id="head"> <img src="images/2018030715184064.png" alt="logo" width="110" height="110" /><span>雪中悍刀行</span></div>
+  <div id="nav">
+    <ul>
+      <li><a href="#">首页</a></li>
+      <li><a href="index2.html">人物介绍</a></li>
+      <li><a href="#">故事背景</a></li>
+      <li><a href="#">各方势力</a></li>
+      <li><a href="#">联系我们</a></li>
+    </ul>
+  </div>
+  </div>
+  
+  <div id="main">
+    <img src="images/img1.jpg" style="display:none"id="img1" border="0" width="925" height="250">
+    <img src="images/img2.jpg" style="display:none"id="img2" border="0" width="925" height="250"/>
+    </div>
+    
+<div id="contrainer">
+   <div id="tupian"> <img src="images/img16.jpg" / width="150" height="200" />  </div> 
+   <div id="wenzi">  
+   		<div id="q">人物事迹:</div>
+	    <li><a href="#">曹长卿离阳观礼</a></li>
+		<li><a href="#">徐凤年截杀皇子</a></li>
+        <li><a href="#">洪洗象骑鹤江南</a></li>
+        <li><a href="#">褚禄山千骑开道</a></li>
+        <li><a href="#">王重阳一指断江</a></ul>
+        <li><a href="#">李淳罡剑开天门</a></ul> 
+        </div>
+   <div id="shipin"> 
+   	 	<div id="q">视频观赏：</div>
+        <img src="images/img19.gif" / width="253" height="174">
+    	</div>  
+     
+   <div id="zuopin">
+     	<div id="q">人物图片：</div>
+        <img src="images/img7.jpg"/ width="304" height="150">
+        <img src="images/img10.jpg"  width="304" height="150" />
+        <img src="images/img9.jpg"  width="304" height="150"/>
+        
+     	</div>  
+ </div>
+ 
+</body>
+</html>

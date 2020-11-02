@@ -1,0 +1,162 @@
+nav {
+    background-image: url(../img/banner.jpg);
+    background-position: 0 -40px;
+    background-size: 100%;
+    height: (326rem / 75);
+
+    .input {
+        position: relative;
+        height: (84rem / 75);
+
+        input {
+            width: (624rem / 75);
+            height: (58rem / 75);
+            border: none;
+            border-radius: (40rem / 75);
+            margin-top: (16rem / 75);
+            margin-left: (24rem / 75);
+            padding-left: (80rem / 75);
+            box-sizing: border-box;
+            font-size: (28rem / 75);
+        }
+
+        >span {
+            position: absolute;
+            top: (27rem / 75);
+            left: (50rem / 75);
+            width: (40rem / 75);
+            height: (40rem / 75);
+            background-image: url(../img/person.png);
+            background-size: (50rem / 75);
+        }
+
+        .my {
+            float: right;
+            width: (100rem /75);
+            height: 100%;
+            text-align: center;
+
+            span {
+                display: inline-block;
+                width: 100%;
+                background-image: url(../img/person.png);
+                background-size: (42rem / 75);
+                background-repeat: no-repeat;
+                background-position: 12px -32px;
+                font-size: (34rem / 75);
+                color: #fff;
+                padding-top: (55rem / 75);
+            }
+        }
+
+        .nav-list {
+            position: absolute;
+            top: (275rem / 75);
+            left: (24rem / 75);
+            width: (702rem / 75);
+            height: (128rem / 75);
+            background-color: #fff;
+            box-shadow: 3px 3px 3px 3px #ececec;
+            ul {
+                height: 100%;
+                overflow: hidden;
+
+                li {
+                    position: relative;
+                    float: left;
+                    width: 20%;
+                    height: 100%;
+                    text-align: center;
+                    font-size: (24rem / 75);
+                    box-sizing: border-box;
+
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        font-size: (26rem / 75);
+
+                        &::after {
+                            position: absolute;
+                            top: (-84rem / 75);
+                            left: (32rem / 75);
+                            content: "";
+                            width: (60rem / 75);
+                            height: (60rem / 75);
+                            background-image: url(../img/sprite.png);
+                            background-size: (80rem / 75);
+                            background-repeat: no-repeat;
+                            background-position: -5px -5px;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        span {
+                            &::after {
+                                background-position: -5px (-90rem / 75);
+                            }
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        span {
+                            &::after {
+                                background-position: -5px (-170rem / 75);
+                            }
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        span {
+                            &::after {
+                                background-position: -5px (-250rem / 75);
+                            }
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        span {
+                            &::after {
+                                background-position: -5px (-325rem / 75)
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.jiudian {
+    background-color: #fafafc;
+    padding: (100rem / 75) (25rem / 75) 0;
+
+    ul {
+        overflow: hidden ;
+        li {
+            float: left;
+           font-size: 16px;
+           color: #fff;
+           font-weight: 700;
+           line-height: (130rem / 75);
+           padding-left: (22rem / 75);
+           box-sizing: border-box;
+            &:first-child {
+                background-image: linear-gradient(to right,#fa5a56,#fa7352);
+
+                width: (216rem / 75);
+                height: (130rem / 75);
+                background-repeat:no-repeat ;
+                background-image:url(../img/h1.png);
+                background-size: (145rem / 75)(64rem / 75);
+                background-position: right bottom;
+
+         
+            }
+        }
+
+        ;
+    }
+}

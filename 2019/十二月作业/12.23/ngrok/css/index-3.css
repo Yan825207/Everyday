@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f4f1;
+}
+
+.title {
+    width: 100%;
+    height: calc(88rem / 64);
+    background-color: #ff9b25;
+    font-size: calc(32rem / 64);
+    color: #fff;
+    line-height: calc(88rem / 64);
+}
+
+.title i {
+    position: absolute;
+    width: calc(33rem / 64);
+    height: calc(32rem / 64);
+    background-image: url(../image/Rectangle\ 1\ copy\ 16.png);
+    background-repeat: no-repeat;
+    background-size: calc(20rem / 64) calc(32rem / 64);
+    margin-top: calc(28rem / 64);
+    margin-left: calc(20rem / 64);
+}
+
+.title span {
+    margin-left: 9%;
+}
+
+.title a {
+    float: right;
+    font-size: calc(32rem / 64);
+    color: #fff;
+    margin-right: calc(26rem / 64);
+}
+
+.name {
+    width: 100%;
+    height: calc(104rem / 64);
+    background-color: #ffffff;
+    margin-top: calc(32rem / 64);
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.name span {
+    display: block;
+    height: 100%;
+    font-size: calc(30rem / 64);
+    color: #666;
+    line-height: calc(104rem / 64);
+    margin-left: calc(24rem / 64);
+}
+
+.price {
+    width: 100%;
+    height: calc(104rem / 64);
+    background-color: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+}
+
+.price-left {
+    position: relative;
+    float: left;
+    width: calc(366rem / 64);
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.price-right {
+    position: relative;
+    float: right;
+    width: calc(273rem / 64);
+    height: 100%;
+}
+
+.price-left span {
+    position: absolute;
+    font-size: calc(30rem / 64);
+    top: calc(22rem / 64);
+    left: calc(24rem / 64);
+    color: #555555;
+}
+
+.price-left strong {
+    position: absolute;
+    top: calc(62rem / 64);
+    left: calc(24rem / 64);
+    font-size: calc(20rem / 64);
+    font-weight: normal;
+    color: #999;
+}
+
+.price-left b {
+    position: absolute;
+    top: calc(32rem / 64);
+    right: calc(25rem / 64);
+    font-size: calc(30rem / 64);
+    font-weight: normal;
+    color: #999;
+}
+
+.price-right span {
+    position: absolute;
+    font-size: calc(30rem / 64);
+    top: calc(36rem / 64);
+    left: calc(24rem / 64);
+    color: #555555;
+}
+
+.price-right b {
+    position: absolute;
+    top: calc(36rem / 64);
+    right: calc(25rem / 64);
+    font-size: calc(30rem / 64);
+    color: #999;
+    font-weight: normal;
+
+}
+
+.date {
+    position: relative;
+    width: 100%;
+    height: calc(104rem / 64);
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.date span {
+    position: absolute;
+    font-size: calc(30rem / 64);
+    top: calc(36rem / 64);
+    left: calc(24rem / 64);
+    color: #555555;
+}
+
+.date b {
+    position: absolute;
+    top: calc(36rem / 64);
+    right: calc(25rem / 64);
+    font-size: calc(26rem / 64);
+    font-weight: normal;
+    color: #999;
+}
+
+.time-itl {
+    position: relative;
+    width: 100%;
+    height: calc(104rem / 64);
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.time-itl span {
+    position: absolute;
+    font-size: calc(30rem / 64);
+    top: calc(22rem / 64);
+    left: calc(24rem / 64);
+    color: #555555;
+}
+
+.time-itl strong {
+    position: absolute;
+    top: calc(62rem / 64);
+    left: calc(24rem / 64);
+    font-size: calc(20rem / 64);
+    font-weight: normal;
+    color: #999;
+}
+
+.time-itl b {
+    position: absolute;
+    top: calc(32rem / 64);
+    right: calc(25rem / 64);
+    font-size: calc(30rem / 64);
+    font-weight: normal;
+    color: #999;
+}
+
+.first {
+    position: relative;
+    width: 100%;
+    height: calc(104rem / 64);
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.first span {
+    position: absolute;
+    font-size: calc(30rem / 64);
+    top: calc(36rem / 64);
+    left: calc(24rem / 64);
+    color: #555555;
+}
+
+.first .button {
+    position: absolute;
+    top: calc(32rem / 64);
+    right: calc(25rem / 64);
+    width: calc(124rem / 64);
+    height: calc(53rem / 64);
+    border-radius: 4px;
+    border: solid 1px #c4c4c4;
+    background-color: transparent;
+    font-size: calc(28rem/ 64);
+    line-height: calc(53rem / 64);
+}
+
+.first .button i {
+    font-style: normal;
+    margin-left: calc(14rem / 64);
+    color: #ccc;
+}
+
+.first .button s {
+    position: absolute;
+top: calc(3rem / 64);
+    width: calc(54rem / 64);
+    height: calc(44rem / 64);
+    background-color: #3baca7;
+    border-radius: 4px;
+    margin-left: calc(8rem / 64);
+
+}
+.baocun{
+    width: calc(592rem / 64);
+	height: calc(80rem / 64);
+	background-color: #ff9b25;
+    border-radius: 8px;
+    margin: 0 auto ;
+    margin-top: calc(48rem / 64);
+	font-size: calc(32rem / 64);
+	line-height: calc(80rem / 64);
+    color: #ffffff;
+    text-align: center;
+}

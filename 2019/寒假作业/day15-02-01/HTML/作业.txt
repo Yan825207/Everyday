@@ -1,0 +1,33 @@
+1.总结所有的让元素水平居中的方法
+定位： （1）        div{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        } 
+           （2）
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: burlywood;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+	
+	
+2.em和rem的区别
+em相对与父元素的font-size大小计算
+rem相对于html的font-size大小计算
+
+3.less与sass的区别
+Less用@申明变量，Sass用$声明变量。
+Sass支持条件语句，Less不支持
+
+4.代码题

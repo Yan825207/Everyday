@@ -1,0 +1,222 @@
+body{
+    background: black;
+}
+.topnav {
+    width: 100%;
+    height: 28px;
+    background-color: #2b2b2b;
+    border-bottom: 1px solid #222222;
+}
+
+.topnav-left {
+    float: left;
+}
+
+.topnav-left a {
+    height: 28px;
+    float: left;
+    color: #ccc;
+    line-height: 28px;
+    margin-right: 30px;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.topnav-right li,
+span {
+    float: left;
+    line-height: 28px;
+    margin-right: 20px;
+    color: #ccc;
+}
+
+.topnav-right i {
+    font-size: 18px;
+}
+
+.topnav-right a {
+    color: #ccc;
+    position: relative;
+}
+
+.container a:hover {
+    color: #ff9d00;
+}
+
+.topnav-right i:hover {
+    color: #fdd000;
+}
+.topnav-right .phone {
+    position: relative;
+}
+
+.topnav-right .phone img {
+    position: absolute;
+    left: -20px;
+    top: 5px;
+}
+
+.topnav-right-xcx {
+    display: none;
+    position: absolute;
+    left: -68px;
+    top: 13px;
+}
+
+.topnav-right li:nth-child(5):hover img {
+    display: block;
+}
+
+.topnav-right-wx {
+    width: 130px;
+}
+
+.topnav-right .wechat {
+    display: none;
+    position: absolute;
+    right: -88px;
+    top: 23px;
+    padding: 10px;
+    background-color: white;
+}
+
+.topnav-right .wechat:after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 56px;
+    border: 20px solid #FFF;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.topnav-right li:hover .wechat {
+    display: block;
+}
+
+/*     第二部分     */
+
+.search {
+    height: 150px;
+    background-color: #343434;
+}
+
+.search .logo {
+    float: left;
+}
+
+.search .logo img {
+    margin-top: 42px;
+    margin-left: 10px;
+}
+
+.search-box {
+    float: left;
+    width: 706px;
+    height: 50px;
+
+    margin-top: 42px;
+    margin-left: 70px;
+}
+
+.search-hotline img {
+    margin-top: 55px;
+    margin-left: 10px;
+}
+
+.search-box .input {
+    position: relative;
+}
+
+
+.search-box .input .input-zd{
+    position: absolute;
+    top: 10px;
+    left: -68px;
+    font-size: 16px;
+    color: #fcd200;
+    margin-left: 120px;
+}
+.search-box .input .input-zd ul{
+    display: none;
+    position: absolute;
+    top: 22px;
+    left: -15px;
+    width: 75px;
+     height: 396px;
+    font-size: 10px;
+    color: #ccc;
+    background: white;
+}
+.search-box .input .input-zd:hover ul{
+    display: block;
+}
+.search-box .input .input-left{
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     font-size: 16px;
+     color: #ccc;
+     height: 47px;
+     width: 75px;
+     text-align: center;
+     line-height: 47px;
+     background:  transparent;
+     margin-left: 125px; 
+
+}
+.search .search-box .input .input-left:hover ul{
+    display: block;
+}
+.search-box .input .input-left ul{
+    display: none;
+    position: absolute;
+    top: 49px;
+    width: 75px;
+    font-size: 10px;
+    height: 264px;
+    color: #ccc;
+    background: white;
+    
+}
+
+.search-box .input ul li{
+    width: 75px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.search-box .input ul li:hover{
+    background: #fcd200;
+}
+.search-box input {
+    float: left;
+    width: 480px;
+    height: 40px;
+    background-color: #343434;
+    border: 2px solid #fcd200;
+    color: blanchedalmond;
+    margin-left: 125px; 
+
+}
+
+.search-box button {
+    float: left;
+    width: 90px;
+    height: 44px;
+    margin: 0px;
+    background-color: #fcd200;
+    border: 0px;
+    font-size: 22px;
+
+}
+
+.search-right {
+    float: right;
+    position: relative;
+    top: -18px;
+    right: -60px;
+}

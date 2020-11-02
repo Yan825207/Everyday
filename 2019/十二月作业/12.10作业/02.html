@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .lvyou {
+        width: 1496px;
+        height: 340px;
+        border: 1px solid pink;
+        margin: 100px auto;
+    }
+
+    .lvyou-top {
+        border-bottom: 3px solid #3884e5;
+        margin: 0 10px;
+    }
+
+    .lvyou-top span {
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 40px;
+    }
+
+    .lvyou span:hover {
+        color: #3884e5;
+    }
+
+    .lvyou-bottom-top {
+        height: 56px;
+        text-align: center;
+    }
+
+    .lvyou-bottom-top span {
+        float: left;
+        font-size: 14px;
+        width: 50px;
+        height: 25px;
+        color: #fff;
+        border-radius: 5px;
+        background: #3884e5;
+        margin-top: 20px;
+        margin-left: 24px;
+        line-height: 25px;
+
+    }
+
+    .lvyou-bottom-top strong {
+        float: right;
+        color: #3884e5;
+        line-height: 56px;
+        margin-right: 25px;
+    }
+
+    .lvyou-bottom-bottom {
+        padding-left: 24px;
+    }
+
+    .lvyou-bottom-bottom div {
+        position: relative;
+        float: left;
+        width: 280px;
+        margin-right: 12px;
+        overflow: hidden;
+    }
+
+    .lvyou-bottom-bottom div:hover img {
+        transform: scale(1.1)
+    }
+
+    .one .one-bottom {
+        position: absolute;
+        bottom: -32px;
+        left: 0;
+        width: 280px;
+        height: 80px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .one-bottom p {
+        width: 100%;
+        color: #fff;
+        text-align: center;
+    }
+
+    .one-bottom span {
+        display: inline-block;
+        width: 100%;
+        color: #ccc;
+        text-align: center;
+        overflow: hidden;
+        /*超出部分隐藏*/
+        white-space: nowrap;
+        /*不换行*/
+        text-overflow: ellipsis;
+        /*超出部分省略号显示*/
+    }
+
+    .lvyou-bottom-bottom>div:hover .one-bottom {
+        position: absolute;
+        bottom: 0px;
+        transition: all 0.5s;
+    }
+</style>
+
+<body>
+    <div class="lvyou">
+        <div class="lvyou-top">
+            <span>目的地攻略</span>
+            <span>旅游旗舰店</span>
+        </div>
+        <div class="lvyou-bottom">
+            <div class="lvyou-bottom-top">
+                <span>精选</span>
+                <strong>更多旗舰馆 ></strong>
+            </div>
+            <div class="lvyou-bottom-bottom">
+                <div class="one"><img src="./1.jpg" alt="">
+                    <div class="one-bottom">
+                        <p>韶关旅游体验馆</p>
+                        <span>活力之旅，善美韶关</span>
+                    </div>
+                </div>
+                <div class="one"><img src="./2.jpg" alt="">
+                    <div class="one-bottom">
+                        <p>嘉兴旅游体验馆</p>
+                        <span>红船启梦，心游嘉兴，江南水乡，历李李李李李</span>
+                    </div>
+                </div>
+                <div class="one"><img src="./3.jpg" alt="">
+                    <div class="one-bottom">
+                        <p>韶关旅游体验馆</p>
+                        <span>活力之旅，善美韶关</span>
+                    </div>
+                </div>
+                <div class="one"><img src="./4.jpg" alt="">
+                    <div class="one-bottom">
+                        <p>韶关旅游体验馆</p>
+                        <span>活力之旅，善美韶关</span>
+                    </div>
+                </div>
+                <div class="one"><img src="./5.jpg" alt="">
+                    <div class="one-bottom">
+                        <p>韶关旅游体验馆</p>
+                        <span>活力之旅，善美韶关</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

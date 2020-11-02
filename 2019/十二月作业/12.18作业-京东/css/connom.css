@@ -1,0 +1,14 @@
+body,
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5;
+}
+
+.jlt {
+  background-image: url(../image/jd-sprites.png);
+  background-size: 200px;
+}
+
+/*# sourceMappingURL=connom.css.map */

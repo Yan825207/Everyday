@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+  <button>动态创建表格</button>
+
+  <div id="box1">
+    <!-- 放表格 -->
+  </div>
+  <script>
+    // 后端的数据
+    var heads = ['姓名', '年龄', '性别', '学号', '薪资', '城市', '操作'];
+    var datas = [{
+        name: '欧阳霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '上海'
+      },
+      {
+        name: '令狐霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '诸葛霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '南京'
+      },
+      {
+        name: '西门霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '深圳'
+      },
+      {
+        name: '上官霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '欧阳霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '上海'
+      },
+      {
+        name: '令狐霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '诸葛霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '南京'
+      },
+      {
+        name: '西门霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '深圳'
+      },
+      {
+        name: '上官霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+    ];
+    var flag = true
+    // 获取数据
+
+    var oBtn = document.querySelector("button")
+    var oDiv = document.querySelector("#box1")
+    // 点击事件
+    oBtn.onclick = function () {
+      // 创建表格框架
+      if (flag) {
+        flag = false
+
+        var oTable = document.createElement("table")
+        // 添加元素
+        oDiv.appendChild(oTable)
+        // 创建表头
+        var oTr = document.createElement("tr")
+        oTable.appendChild(oTr)
+        // 添加
+        for (var i = 0; i < heads.length; i++) {
+          var oTh = document.createElement("th")
+          oTr.appendChild(oTh)
+          oTh.innerText = heads[i]
+        }
+        // 创建表体
+        for (var j = 0; j < datas.length; j++) {
+          var oBtr = document.createElement("tr")
+          oTable.appendChild(oBtr)
+          for (key in datas[j]) {
+            var oBtd = document.createElement("td")
+            // 添加td
+            oBtr.appendChild(oBtd)
+            oBtd.innerText = datas[j][key]
+          }
+          var num = 0
+
+          var mw = document.createElement("td")
+          oBtr.appendChild(mw)
+          mw.innerText = "删除"
+          mw.classList.add("last")
+          mw.onclick = function () {
+            this.parentNode.parentNode.removeChild(this.parentNode);
+            num++
+            var isok = continue("hahaha ")
+            if (num == datas.length) {
+              oDiv.removeChild(oTable)
+              flag = true
+            }
+          }
+
+        }
+
+      }
+
+    }
+  </script>
+</body>
+
+</html>

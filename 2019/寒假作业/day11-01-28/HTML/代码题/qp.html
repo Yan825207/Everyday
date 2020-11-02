@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+            width: 334px;
+            height: 148px;
+            background-color: #003167;
+            margin: 200px auto;
+            border-radius: 15px;
+            transition: all 1s;
+        }
+        img:nth-last-child(2){
+            transition: all 1s;
+            position:absolute;
+            top: -267px;
+        }
+    div:hover img:first-child{
+        transform: translate(10px,100px);
+
+    }
+    div:hover img:nth-last-child(1){
+        transform: translate(-10px,-100px);
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/paopao.png" alt="">
+        <img src="./images/paopao.png" alt="">
+    </div >
+</body>
+</html>

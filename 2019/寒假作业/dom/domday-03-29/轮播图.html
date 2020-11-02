@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        ul,
+        ol {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 10000px;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: relative;
+            width: 350px;
+            height: 450px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        ul {
+            /* 为了一会移动 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*  */
+            width: calc(350px*5);
+            height: 450px;
+        }
+
+        img {
+            width: 350px;
+            height: 450px;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        .prev {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 215px;
+            left: 0;
+
+        }
+
+        i {
+            width: 40px;
+            height: 40px;
+            background-image: url(./iamges/lr.jpg);
+            display: none;
+            background-repeat: no-repeat;
+            background-size: 40px 20px;
+        }
+
+        .next {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 215px;
+            right: 0;
+            background-position: -20px 0;
+        }
+
+        ol {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%);
+            overflow: hidden;
+            z-index: 1;
+            list-style: none;
+        }
+
+        ol>li {
+            width: 15px;
+            height: 15px;
+            background-color: black;
+            border: 1px solid #ccc;
+            float: left;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .yuan {
+            background-color: #ccc;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" slider">
+        <ul>
+            <li><a href="javascript:;"><img src="./iamges/1.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./iamges/2.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./iamges/3.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./iamges/4.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./iamges/5.jpg" alt=""></a></li>
+        </ul>
+        <!-- 左按钮 -->
+        <i class="prev"></i>
+        <!-- 右按钮 -->
+        <i class="next"></i>
+        <!-- 小圆点导航 -->
+        <ol>
+        </ol>
+    </div>
+    <script src="./animate.js"></script>
+    <script>
+        // 获取元素
+        var oDiv = document.querySelector(".slider")
+        var oLeft = document.querySelector(".prev")
+        var oRight = document.querySelector(".next")
+        var oLi = document.querySelectorAll("ul>li")
+        var oUl = document.querySelector("ul")
+        var num = 0;
+        var  wid = oDiv.offsetWidth
+        var firstli = document.querySelector("ul>li:first-child")
+        oUl.appendChild(firstli.cloneNode(true))
+        oUl.style.width = oUl.children.length * wid + "px";
+        var ol = document.querySelector("ol")
+        // 鼠标移入移出箭头显示隐藏
+        oDiv.addEventListener("mousemove", function () {
+            oLeft.style.display = "block"
+            oRight.style.display = "block"
+        })
+        oDiv.addEventListener("mouseout", function () {
+            oLeft.style.display = "none"
+            oRight.style.display = "none"
+        })
+
+
+        // 点击左箭头图片往右走
+        // 申明变量num
+        oRight.onclick = function () {
+            if (num == oUl.children.length - 1) {
+                num = 0;
+                oUl.style.left = 0
+            }
+            num++
+            animate(oUl, {
+                left: num * -wid
+            })
+        }
+        // 点击左键头
+        oLeft.onclick = function () {
+            if (num == 0) {
+                num = oUl.children.length - 1
+                console.log(num)
+                oUl.style.left = -num * wid + "px"
+            }
+            num--
+            animate(oUl, {
+                left: num * -wid
+            })
+        }
+        // 添加小圆点
+
+        for (var i = 0; i < oLi.length; i++) {
+            // 创建元素
+            var li = document.createElement("li")
+            // 通过自定义属性记录索引
+            li.dataset.index = i
+            if (i == 0) {
+                li.classList.add('yuan');
+            }
+            ol.appendChild(li)
+            ol.children[i].onclick = function () {
+                for (var i = 0; i < ol.children.length; i++) {
+                    ol.children[i].classList.remove("yuan")
+                }
+                this.classList.add("yuan")
+                // 点击圆点拿到对应索引
+                var index = this.dataset.index
+                animate(oUl, {
+                    left: -index * wid 
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

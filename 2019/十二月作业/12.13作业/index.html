@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>携程网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .zhongchou img {
+            width: 100%;
+            height: 100%, ;
+        }
+
+        .main {
+            /* display: flex; */
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .jiudian,
+        .chepiao,
+        .gonglue,
+        .genduo{
+            display: flex;
+            flex: 1;
+            height: 90px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+
+
+        .jiudian-left,
+        .chepiao-left,
+        .gonglue-left{
+            flex: 1;
+            background-color: #FF697A;
+        }
+
+        .jiudian-right,
+        .chepiao-right,
+        .gonglue-right,
+        .genduo-right {
+            display: flex;
+            flex-wrap: wrap;
+
+            flex: 2;
+            background-color: #FF697A;
+
+        }
+
+        .jiudian-right a,
+        .chepiao-right a,
+        .gonglue-right a,
+        .genduo-right a {
+            width: 50%;
+            height: 45px;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            font-family: "微软雅黑";
+        }
+
+        .chepiao-right a {
+            background-color: #3D98FF;
+        }
+
+        .gonglue-right a {
+            background-color: #44C522;
+        }
+        .genduo-right a{
+            background-color: #FC9720;
+        }
+        .chepiao-left {
+            background-color: #3D98FF;
+        }
+
+        .gonglue-left {
+            background-color: #44C522;
+        }
+        .genduo-left{
+            background-color: #FC9720;
+        }
+        .genduo-left{
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+        .genduo-left a{
+            width: 100%;
+            height: 45px;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            font-family: "微软雅黑";
+
+        }
+        .tu{
+            display: flex;
+        }
+        .tu a{
+            flex: 1;
+        }
+    .tu img{
+        width: 100%;
+        height: 100%;
+    }
+    .yd{
+        line-height: 44px;
+        display: flex;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    .yd span{
+        flex: 1;
+        height: 44px;
+        text-align: center;
+        font-family: "微软雅黑";
+        font-size: 16px;
+
+    }
+    .bottom{
+        font-size: 14px;
+        text-align: center;
+        color: #666;
+        margin-top: 12px;
+    }
+    .last{
+        font-size: 12px;
+        text-align: center;
+        color: #999;
+        margin-top: 12px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="zhongchou">
+        <a href="">
+                    <img src="./img/banner.jpg" alt="">
+        </a>
+
+    </div>
+    <div class="main">
+        <div class="jiudian">
+            <div class="jiudian-left"></div>
+            <div class="jiudian-right">
+                <a href="">海外酒店</a>
+                <a href="">团购</a>
+                <a href="">特惠酒店</a>
+                <a href="">客栈公寓</a>
+            </div>
+        </div>
+        <div class="chepiao">
+            <div class="chepiao-left"></div>
+            <div class="chepiao-right">
+                <a href="">火车票</a>
+                <a href="">汽车票船票</a>
+                <a href="">国际机票</a>
+                <a href="">自驾专车</a>
+            </div>
+        </div>
+        <div class="gonglue">
+            <div class="gonglue-left"></div>
+            <div class="gonglue-right">
+                <a href="">火车票</a>
+                <a href="">汽车票船票</a>
+                <a href="">国际机票</a>
+                <a href="">自驾专车</a>
+            </div>
+        </div>
+        <div class="genduo">
+            <div class="genduo-left">
+                <a href="">门票玩乐</a>
+                <a href="">礼品卡</a>
+            </div>
+            <div class="genduo-right">
+                <a href="">门票玩乐</a>
+                <a href="">全球购</a>
+                <a href="">出境wifi</a>
+                <a href="">更多</a>
+            </div>
+        </div>
+    </div>
+    <div class="tu">
+        <a href="">
+            <img src="./img/extra_1.png" alt="">
+        </a>
+        <a href="">
+            <img src="./img/extra_2.png" alt="">
+        </a>
+    </div>
+    <div class="yd">
+        <span>电话预定</span>
+        <span>下载客户端</span>
+        <span>我的</span>
+    </div>
+    <p class="bottom">
+        <span>网站地图   |</span>
+        <span>ENGLISH |</span>
+        <span>电脑版</span>
+    </p>
+    <p class="last">
+        &COPY; 2015 携程旅行
+    </p>
+</body>
+
+</html>
