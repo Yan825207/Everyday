@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        span {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    密码：<input type="text"><span></span>
+    <script>
+        let input = document.querySelector('input')
+        let span = document.querySelector('span')
+        input.onblur = function () {
+            let name = input.value
+            let regexp = /^[a-zA-Z0-9-_]{6,16}$/
+            console.log(name);
+                if (regexp.test(name) ){
+                    span.innerHTML = '用户名格式输入正确'
+                    span.className = ''
+                } else {
+                    span.innerHTML = '用户名格式输入不正确'
+                    span.className = 'red'
+                }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body,#app,.big{
+            height: 100%;
+            margin: 0;
+            padding: 0  ;
+        }
+        .red {
+            background-color: yellow;
+        }
+
+        .black {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <div :class='["big",falg ? red1 : black1]'>
+            <button v-on:click="guan">toggle</button>
+            <h1>{{count}}</h1>
+        </div>
+    </div>
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        let vm = Vue.createApp({
+            data() {
+                return {
+                    count: 'Hello,word',
+                    red1:'red',
+                    black1:'black',
+                    falg:false
+                }
+            },
+            methods: {
+                guan() {
+                    this.falg = !this.falg;
+                }
+            }
+        })
+        vm.mount('#app')
+    </script>
+</body>
+
+
+
+</html>

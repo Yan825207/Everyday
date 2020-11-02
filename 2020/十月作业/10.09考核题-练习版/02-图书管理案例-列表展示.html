@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .grid {
+      margin: auto;
+      width: 530px;
+      text-align: center;
+    }
+
+    .grid table {
+      border-top: 1px solid #C2D89A;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .grid th,
+    td {
+      padding: 10;
+      border: 1px dashed orange;
+      height: 35px;
+      line-height: 35px;
+    }
+
+    .grid th {
+      background-color: orange;
+    }
+
+    .grid .book {
+      padding-bottom: 10px;
+      padding-top: 5px;
+      background-color: orange;
+    }
+  </style>
+  <script src="vue3.0.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="grid">
+      <div>
+        <h1>图书管理</h1>
+        <div class="book">
+          <div>
+            <label for="id">
+              编号：
+            </label>
+            <input type="text" id="id" v-model='id' :disabled='flag'>
+            <label for="name">
+              名称：
+            </label>
+            <input type="text" id="name" v-model='name'>
+            <button @click='add'>提交</button>
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for='(item,index) in books'>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.date}}</td>
+            <td>
+              <a href="" @click.prevent='edit(item.id)'>修改</a>
+              <span>|</span>
+              <a href="" @click.prevent='remove(index)'>删除</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="./vue3.0.global.js"></script>
+  <script>
+    let vm = Vue.createApp({
+      data() {
+        return {
+          books: '',
+          name: '',
+          id: '',
+          flag: false
+        }
+      },
+      // 页面加载时查找数据
+      created() {
+        this.books = JSON.parse(localStorage.getItem('books') || '[]')
+      },
+      // 方法
+      methods: {
+        // 添加   判断flag 为true是修改，否则是添加
+        add() {
+          if (this.flag) {
+            // 修改数据
+            let index = this.books.findIndex((val) => val.id == this.id)
+            this.books[index].name = this.name
+            this.name = '';
+            this.id = ''
+            this.flag = false
+          } else {
+            this.books.push({
+              id: new Date().valueOf(),
+              name: this.name,
+              date: new Date().toLocaleDateString(),
+            })
+            this.name = '';
+            this.id = ''
+          }
+        },
+        // 删除
+        remove(i) {
+          this.books.splice(i, 1)
+        },
+        // 修改
+        edit(id) {
+          // 回显
+          let arr = this.books.filter((val) => val.id == id)
+          this.name = arr[0].name;
+          this.id = arr[0].id
+          this.flag = true
+        }
+
+
+      },
+
+      // 数据变化时触发保存数据
+      updated() {
+        localStorage.setItem('books', JSON.stringify(this.books))
+      }
+    })
+    vm.mount("#app")
+  </script>
+</body>
+
+</html>

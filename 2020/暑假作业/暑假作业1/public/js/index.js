@@ -1,0 +1,10 @@
+$(function(){
+    $.ajax({
+        type:'get',
+        url:"/admin/list",
+        data:null,
+        success:function(data){
+            console.log(data);
+        }
+    })
+})

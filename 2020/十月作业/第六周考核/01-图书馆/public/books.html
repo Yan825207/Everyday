@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .grid {
+      margin: auto;
+      width: 540px;
+      text-align: center;
+    }
+
+    .grid table {
+      border-top: 1px solid #C2D89A;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .grid th,
+    td {
+      padding: 10;
+      border: 1px dashed orange;
+      height: 35px;
+      line-height: 35px;
+    }
+
+    .grid th {
+      background-color: orange;
+    }
+
+    .grid .book {
+      padding-bottom: 10px;
+      padding-top: 5px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="grid">
+      <div>
+        <h1>图书管理</h1>
+        <div>
+          图书数量:
+          <span>{{count}}</span>
+        </div>
+        <div class="book">
+          <div>
+            <label for="id">
+              编号：
+            </label>
+            <input type="text" id="id" v-model='id' :disabled='flag'>
+            <label for="name">
+              名称：
+            </label>
+            <input type="text" id="name" v-model='name' >
+            <button @click='dataadd' :disabled='aflag'>提交</button>
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for='item in books'>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.date}}</td>
+            <td>
+              <a href="" @click.prevent='dataEdit(item.id)'>修改</a>
+              <span>|</span>
+              <a href="" @click.prevent='datadelete(item.id)'>删除</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="./lib/vue-3.0.0.js"></script>
+  <script src="./lib/axios.js"></script>
+  <script>
+    axios.default.baseURL='http://localhost:3000/'
+    let vm = Vue.createApp({
+      data(){
+        return{
+          books:[],
+          name:"",
+          id:"",
+          flag :false,
+          aflag :false,
+          count:0
+        }
+      },
+      // 页面加载前获取数据
+      created(){
+        this.dataEach()
+      },
+      methods:{
+       
+        // 渲染数据
+       async dataEach(){
+          let res =await axios.get('books')
+          this.books = res.data
+        },
+        async dataadd(){
+           // 判断是编辑还是添加
+        if(this.flag){
+          // 编辑
+          let res = await axios.put(`books/${this.id}`,{
+            // 传入name
+            name:this.name
+          })
+          if(res.data.status == 200){
+            // 清空输入框 解除禁用id输入框
+            this.name = ""
+            this.id = ''
+            this.flag = false
+            // 渲染页面
+            this.dataEach()
+          }
+        }else{
+          // 添加
+          if(this.name.trim().length == 0) return
+          let res = await axios.post('books',{
+            // 传入name
+
+            name: this.name
+          })
+          if(res.data.status == 200){
+            // 清空输入框
+            this.name=''
+            this.id=''
+            this.dataEach()
+          }
+        }
+        
+        },
+        // 删除功能
+        async datadelete(id){
+          let res =await axios.delete(`books/${id}`)
+          if(res.data.status == 200){
+            // 渲染
+            this.dataEach()
+          }
+        },
+        // 编辑功能回显
+        async dataEdit(id){
+          let res =await axios.get( `books/${id}`)
+          // 回显数据
+          this.name = res.data.name
+          this.id = res.data.id
+          // 禁用id输入框/*  */
+          this.flag = true
+        }
+      }
+      ,watch:{
+        // 监听属性  name变化触发
+        async name(){
+          let res = await axios.get(`books/book/${this.name}`)
+          if(res.data.status == 1){
+            // 等于1代表有相同的名字,禁用提交按钮
+            this.aflag = true
+          }else{
+            // 否者取消禁用
+            this.aflag = false
+          }
+        },
+        books(){
+          // 监听所有数据,发生变化这重新计算总和
+          this.count = this.books.length
+
+        }
+      }
+    })
+    vm.mount('#app')
+  </script>
+</body>
+
+</html>

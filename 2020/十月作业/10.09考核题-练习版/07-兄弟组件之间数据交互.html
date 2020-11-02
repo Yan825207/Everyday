@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gg {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .cc {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="app">
+        <gg></gg>
+        <cc></cc>
+    </div>
+
+    <script src="./vue3.0.global.js"></script>
+    <script src="./mitt-2.1.0.js"></script>
+    <script>
+        let vm = Vue.createApp({})
+        let emitter = mitt()
+        vm.component('gg', {
+            data() {
+                return {
+                }
+            },
+            methods: {
+                hand() {
+                    // 传入都数据
+                    emitter.emit('fool', { a: 'b' })
+                }
+            },
+            template: '<div class="gg"><h3 @click="hand">哥哥</h3></div>'
+        })
+        vm.component("cc", {
+            data() {
+                return {
+                    msg: ''
+                }
+            },
+            // dom加载完成,可以使用插件
+            mounted() {
+                let that = this
+                emitter.on('fool', (val) => {
+                    that.msg = val.a
+                })
+            },
+            template: '<div class="cc"><h3>弟弟</h3>{{msg}}</div>'
+        })
+        vm.mount('#app')
+    </script>
+</body>
+
+</html>
