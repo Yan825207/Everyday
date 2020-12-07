@@ -20,7 +20,7 @@
         </a-col>
       </a-row>
       <a-table
-        :row-key="(record) => record.order_id"
+        :row-key="record => record.order_id"
         :pagination="false"
         :columns="tableData.columns"
         :data-source="tableData.orderData"
@@ -46,7 +46,7 @@
         style="margin-top: 25px"
         v-model:current="pagetion.pagenum"
         :total="pagetion.total"
-        :show-total="(total) => `共 ${pagetion.total} 条`"
+        :show-total="total => `共 ${pagetion.total} 条`"
         show-size-changer
         @showSizeChange="onShowSizeChange"
         :page-size-options="pagetion.pageSizeOptions"
@@ -114,7 +114,7 @@ export default {
         pagesize: 10,
         total: 0,
         // 每页显示多少条
-        pageSizeOptions: ["1", "2", "5", "8", "10"],
+        pageSizeOptions: ["1", "2", "5", "8", "10"]
       },
       //   表格数据
       tableData: {
@@ -123,46 +123,46 @@ export default {
           {
             title: "#",
             key: "index",
-            slots: { customRender: "index" },
+            slots: { customRender: "index" }
           },
           {
             title: "订单编号",
             dataIndex: "order_number",
-            key: "order_number",
+            key: "order_number"
           },
           {
             title: "订单价格",
             dataIndex: "order_price",
-            key: "order_price",
+            key: "order_price"
           },
           {
             title: "是否付款",
             key: "orderPay",
-            slots: { customRender: "orderPay" },
+            slots: { customRender: "orderPay" }
           },
           {
             title: "是否发货",
             dataIndex: "is_send",
-            key: "is_send",
+            key: "is_send"
           },
           {
             title: "下单时间",
             dataIndex: "update_time",
-            key: "update_time",
+            key: "update_time"
           },
           {
             title: "操作",
             key: "edit",
-            slots: { customRender: "edit" },
-          },
-        ],
+            slots: { customRender: "edit" }
+          }
+        ]
       },
       // 修改地址弹出框数据
       address: {
         visible: false,
         ModalFrom: {
           city: [],
-          addres: "",
+          addres: ""
         },
         citydata: [],
         // 验证规则
@@ -171,19 +171,19 @@ export default {
             {
               required: true,
               message: "请填写详细地址",
-              trigger: "blur",
-            },
+              trigger: "blur"
+            }
           ],
           city: [
             {
               type: "array",
               required: true,
               message: "请选择地址",
-              trigger: "blur",
-            },
-          ],
-        },
-      },
+              trigger: "blur"
+            }
+          ]
+        }
+      }
     };
   },
   created() {
@@ -194,9 +194,9 @@ export default {
     getTableData() {
       httpGet(order.getorders, {
         pagenum: this.pagetion.pagenum,
-        pagesize: this.pagetion.pagesize,
+        pagesize: this.pagetion.pagesize
       })
-        .then((response) => {
+        .then(response => {
           let { meta, data } = response;
           console.log(response);
           if (meta.status == 200) {
@@ -206,7 +206,7 @@ export default {
             this.pagetion.total = data.total;
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     },
@@ -231,12 +231,12 @@ export default {
     // 关闭修改地址模态框时清除数据
     headleclose() {
       this.$refs.ruleForm.resetFields();
-    },
+    }
   },
   components: {
     EditOutlined,
-    EnvironmentOutlined,
-  },
+    EnvironmentOutlined
+  }
 };
 </script>
 

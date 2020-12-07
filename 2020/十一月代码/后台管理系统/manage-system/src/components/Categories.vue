@@ -13,7 +13,7 @@
       <a-button type="primary" size="large"> 添加用户 </a-button>
       <a-table
         style="font-size: 12px"
-        :row-key="(record) => record.cat_id"
+        :row-key="record => record.cat_id"
         :columns="table.Columns"
         :data-source="table.data"
         :pagination="false"
@@ -50,7 +50,7 @@
         style="margin-top: 25px"
         v-model:current="pagetion.pagenum"
         :total="pagetion.total"
-        :show-total="(total) => `共 ${pagetion.total} 条`"
+        :show-total="total => `共 ${pagetion.total} 条`"
         show-size-changer
         @showSizeChange="onShowSizeChange"
         :page-size-options="pagetion.pageSizeOptions"
@@ -67,7 +67,7 @@ import { httpGet } from "@/utils/http";
 import {
   CheckCircleTwoTone,
   EditOutlined,
-  DeleteOutlined,
+  DeleteOutlined
 } from "@ant-design/icons-vue";
 export default {
   data() {
@@ -77,37 +77,37 @@ export default {
           {
             title: "#",
             key: "index",
-            slots: { customRender: "index" },
+            slots: { customRender: "index" }
           },
           {
             title: "分类名称",
             dataIndex: "cat_name",
-            key: "cat_name",
+            key: "cat_name"
           },
           {
             title: "是否有效",
             key: "cat_deleted",
-            slots: { customRender: "cat_deleted" },
+            slots: { customRender: "cat_deleted" }
           },
           {
             title: "排序",
             key: "level",
-            slots: { customRender: "level" },
+            slots: { customRender: "level" }
           },
           {
             title: "操作",
             key: "edit",
-            slots: { customRender: "edit" },
-          },
-        ],
+            slots: { customRender: "edit" }
+          }
+        ]
       },
       data: [],
       pagetion: {
         pagenum: 1,
         pagesize: 5,
         total: 0,
-        pageSizeOptions: ["1", "2", "5", "8", "10"],
-      },
+        pageSizeOptions: ["1", "2", "5", "8", "10"]
+      }
     };
   },
   created() {
@@ -118,9 +118,9 @@ export default {
       //   获取数据
       httpGet(goods.getgood, {
         pagenum: this.pagetion.pagenum,
-        pagesize: this.pagetion.pagesize,
+        pagesize: this.pagetion.pagesize
       })
-        .then((res) => {
+        .then(res => {
           let { meta, data } = res;
           console.log(res);
           if (meta.status == 200) {
@@ -128,7 +128,7 @@ export default {
             this.pagetion.total = data.total;
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     },
@@ -144,15 +144,14 @@ export default {
       this.pagetion.pagenum = page;
       this.pagetion.pagesize = pageSize;
       this.getTable();
-    },
+    }
   },
   components: {
     CheckCircleTwoTone,
     EditOutlined,
-    DeleteOutlined,
-  },
+    DeleteOutlined
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

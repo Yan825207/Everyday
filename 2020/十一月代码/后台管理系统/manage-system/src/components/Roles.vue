@@ -56,7 +56,7 @@
       <a-row>
         <a-col :span="24">
           <a-table
-            :row-key="(record) => record.id"
+            :row-key="record => record.id"
             :columns="columns"
             :data-source="roleList"
             :pagination="false"
@@ -146,7 +146,7 @@
               :replaceFields="{
                 children: 'children',
                 title: 'authName',
-                key: 'id',
+                key: 'id'
               }"
               v-model:checkedKeys="defaultKey"
               defaultExpandAll
@@ -168,7 +168,7 @@ import {
   EditOutlined,
   DeleteOutlined,
   SettingOutlined,
-  ExclamationCircleOutlined,
+  ExclamationCircleOutlined
 } from "@ant-design/icons-vue";
 // 引入全局提示
 import { message, Modal } from "ant-design-vue";
@@ -181,7 +181,7 @@ export default {
         { title: "#", slots: { customRender: "index" }, key: "index" },
         { title: "角色名称", dataIndex: "roleName", key: "roleName" },
         { title: "角色描述", dataIndex: "roleDesc", key: "roleDesc" },
-        { title: "操作", key: "level", slots: { customRender: "edit" } },
+        { title: "操作", key: "level", slots: { customRender: "edit" } }
       ],
       //   角色列表
       roleList: [],
@@ -198,7 +198,7 @@ export default {
       // 存放选中的限权的id
       defaultKey: [],
       // 角色id
-      roelId: "",
+      roelId: ""
     };
   },
   created() {
@@ -207,14 +207,14 @@ export default {
   methods: {
     getRole() {
       httpGet("roles")
-        .then((res) => {
+        .then(res => {
           let { meta, data } = res;
           // console.log(res);
           if (meta.status == 200) {
             this.roleList = data;
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     },
@@ -227,9 +227,9 @@ export default {
       // 发起亲求
       httpPost(role.getrole, {
         roleName: this.roleName,
-        roleDesc: this.roleDesc,
+        roleDesc: this.roleDesc
       })
-        .then((res) => {
+        .then(res => {
           let { meta } = res;
           console.log(res);
           if (meta.status == 400) {
@@ -244,7 +244,7 @@ export default {
             this.getRole();
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     },
@@ -270,7 +270,7 @@ export default {
         onOk() {
           // 发请求
           httpDelete(`roles/${roleId}/rights/${rightId}`)
-            .then((res) => {
+            .then(res => {
               let { meta } = res;
               if (meta.status == 200) {
                 // 删除成功
@@ -280,10 +280,10 @@ export default {
                 that.getRole();
               }
             })
-            .catch((err) => {
+            .catch(err => {
               console.log(err);
             });
-        },
+        }
       });
     },
     // 分配权限
@@ -292,7 +292,7 @@ export default {
       this.roelId = record.id;
       // 发请求获取数据
       httpGet(rights.getTreeData)
-        .then((res) => {
+        .then(res => {
           let { meta, data } = res;
           if (meta.status == 200) {
             // 保存数据
@@ -302,7 +302,7 @@ export default {
             this.Modelvisible = true;
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     },
@@ -314,7 +314,7 @@ export default {
         return this.defaultKey.push(node.id);
       }
       // 否则循环children属性
-      node.children.forEach((ele) => {
+      node.children.forEach(ele => {
         this.headletreeData(ele);
       });
     },
@@ -326,9 +326,9 @@ export default {
     headleOK() {
       // 发请求
       httpPost(`roles/${this.roelId}/rights`, {
-        rids: this.defaultKey.join(","),
+        rids: this.defaultKey.join(",")
       })
-        .then((res) => {
+        .then(res => {
           let { meta } = res;
           if (meta.status == 200) {
             // 修改成功
@@ -340,16 +340,16 @@ export default {
             this.getRole();
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
-    },
+    }
   },
   components: {
     EditOutlined,
     DeleteOutlined,
-    SettingOutlined,
-  },
+    SettingOutlined
+  }
 };
 </script>
 

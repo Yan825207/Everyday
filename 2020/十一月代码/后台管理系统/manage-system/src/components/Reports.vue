@@ -23,25 +23,25 @@ export default {
     return {
       option: {
         title: {
-          text: "用户来源",
+          text: "用户来源"
         },
         tooltip: {
           trigger: "axis",
           axisPointer: {
             type: "cross",
             label: {
-              backgroundColor: "#6a7985",
-            },
-          },
+              backgroundColor: "#6a7985"
+            }
+          }
         },
         legend: {
-          data: ["华东", "华南", "华北", "西部", "其他"],
+          data: ["华东", "华南", "华北", "西部", "其他"]
         },
         grid: {
           left: "3%",
           right: "4%",
           bottom: "3%",
-          containLabel: true,
+          containLabel: true
         },
         xAxis: [
           {
@@ -54,14 +54,14 @@ export default {
               "2017-12-30",
               "2017-12-31",
               "2018-1-1",
-              "2018-1-2",
-            ],
-          },
+              "2018-1-2"
+            ]
+          }
         ],
         yAxis: [
           {
-            type: "value",
-          },
+            type: "value"
+          }
         ],
         series: [
           {
@@ -69,28 +69,28 @@ export default {
             type: "line",
             stack: "总量",
             areaStyle: {},
-            data: [120, 132, 101, 134, 90, 230, 210],
+            data: [120, 132, 101, 134, 90, 230, 210]
           },
           {
             name: "华南",
             type: "line",
             stack: "总量",
             areaStyle: {},
-            data: [220, 182, 191, 234, 290, 330, 310],
+            data: [220, 182, 191, 234, 290, 330, 310]
           },
           {
             name: "华北",
             type: "line",
             stack: "总量",
             areaStyle: {},
-            data: [150, 232, 201, 154, 190, 330, 410],
+            data: [150, 232, 201, 154, 190, 330, 410]
           },
           {
             name: "西部",
             type: "line",
             stack: "总量",
             areaStyle: {},
-            data: [320, 332, 301, 334, 390, 330, 320],
+            data: [320, 332, 301, 334, 390, 330, 320]
           },
           {
             name: "其他",
@@ -99,14 +99,14 @@ export default {
             label: {
               normal: {
                 show: true,
-                position: "top",
-              },
+                position: "top"
+              }
             },
             areaStyle: {},
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
-          },
-        ],
-      },
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      }
     };
   },
   mounted() {
@@ -114,9 +114,8 @@ export default {
     var myChart = Echarts.init(document.getElementById("main"));
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(this.option);
-  },
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,7 +1,4 @@
-import {
-  createRouter,
-  createWebHashHistory
-} from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 // 导入登录页面组件
 import Login from "@/views/Login";
@@ -24,7 +21,8 @@ const routes = [
     name: "Home",
     path: "/home",
     component: () => import("@/views/Home"),
-    children: [{
+    children: [
+      {
         path: "/home",
         redirect: "/welcome"
       },
@@ -64,7 +62,6 @@ const routes = [
         path: "/categories",
         component: () => import("@/components/Categories")
       }
-
     ]
   }
 ];
@@ -82,9 +79,10 @@ router.beforeEach((to, from, next) => {
   // 获取token
   const isAuthenticated = window.sessionStorage.getItem("token");
   // 如果将要去的地方 不是Login 且没有授权 要强制跳转到Login页面
-  if (to.name !== "Login" && !isAuthenticated) next({
-    name: "Login"
-  });
+  if (to.name !== "Login" && !isAuthenticated)
+    next({
+      name: "Login"
+    });
   else next(); // 否则放行
 });
 

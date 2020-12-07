@@ -37,10 +37,10 @@ export default {
         { title: "#", slots: { customRender: "index" }, key: "index" },
         { title: "限权名称", dataIndex: "authName", key: "authName" },
         { title: "路径", dataIndex: "path", key: "path" },
-        { title: "权限等级", key: "level", slots: { customRender: "level" } },
+        { title: "权限等级", key: "level", slots: { customRender: "level" } }
       ],
       //   表格数据
-      tableData: [],
+      tableData: []
     };
   },
 
@@ -48,7 +48,7 @@ export default {
     getTable() {
       // 发起亲求
       httpGet(rights.getTabData)
-        .then((res) => {
+        .then(res => {
           let { meta, data } = res;
           console.log(data);
           if (meta.status == 200) {
@@ -56,11 +56,11 @@ export default {
             this.tableData = data;
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
-    },
-  },
+    }
+  }
 };
 </script>
 

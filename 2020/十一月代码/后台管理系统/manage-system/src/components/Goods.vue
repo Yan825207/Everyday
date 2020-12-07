@@ -22,7 +22,7 @@
       </a-row>
       <a-table
         style="font-size: 12px"
-        :row-key="(record) => record.id"
+        :row-key="record => record.id"
         :columns="table.Columns"
         :data-source="table.data"
         :pagination="false"
@@ -47,7 +47,7 @@
         style="margin-top: 25px"
         v-model:current="pagetion.pagenum"
         :total="pagetion.total"
-        :show-total="(total) => `共 ${pagetion.total} 条`"
+        :show-total="total => `共 ${pagetion.total} 条`"
         show-size-changer
         @showSizeChange="onShowSizeChange"
         :page-size-options="pagetion.pageSizeOptions"
@@ -72,25 +72,25 @@ export default {
           {
             title: "商品价格（元）",
             dataIndex: "goods_price",
-            key: "goods_price",
+            key: "goods_price"
           },
           { title: "商品重量", dataIndex: "goods_weight", key: "goods_weight" },
           { title: "创建时间", dataIndex: "add_time", key: "add_time" },
           {
             title: "操作",
             key: "edit",
-            slots: { customRender: "edit" },
-          },
+            slots: { customRender: "edit" }
+          }
         ],
-        data: [],
+        data: []
       },
       //   分页
       pagetion: {
         pagenum: 1,
         pagesize: 10,
         total: 0,
-        pageSizeOptions: ["1", "2", "5", "8", "10"],
-      },
+        pageSizeOptions: ["1", "2", "5", "8", "10"]
+      }
     };
   },
   created() {
@@ -102,9 +102,9 @@ export default {
       // 发亲求
       httpGet(goods.getgoodsList, {
         pagenum: this.pagetion.pagenum,
-        pagesize: this.pagetion.pagesize,
+        pagesize: this.pagetion.pagesize
       })
-        .then((res) => {
+        .then(res => {
           let { meta, data } = res;
           if (meta.status == 200) {
             //   数据获取成功
@@ -113,7 +113,7 @@ export default {
             this.pagetion.total = data.total;
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     },
@@ -129,14 +129,13 @@ export default {
       this.pagetion.pagenum = page;
       this.pagetion.pagesize = pageSize;
       this.getTableData();
-    },
+    }
   },
   components: {
     EditOutlined,
-    DeleteOutlined,
-  },
+    DeleteOutlined
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>
