@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/meal/meal"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tabBar/home.png",
+        "selectedIconPath": "/images/tabBar/home.png",
+        "backgroundColor": "#000"
+      },
+      {
+        "pagePath": "pages/meal/meal",
+        "text": "点单",
+        "iconPath": "/images/tabBar/meal.png",
+        "selectedIconPath": "/images/tabBar/meal.png"
+      },
+      {
+        "pagePath": "pages/meal/meal",
+        "text": "百货",
+        "iconPath": "/images/tabBar/baihuo.png",
+        "selectedIconPath": "/images/tabBar/baihuo.png"
+      },
+      {
+        "pagePath": "pages/meal/meal",
+        "text": "订单",
+        "iconPath": "/images/tabBar/ding.png",
+        "selectedIconPath": "/images/tabBar/ding.png"
+      },
+      {
+        "pagePath": "pages/meal/meal",
+        "text": "我的",
+        "iconPath": "/images/tabBar/my.png",
+        "selectedIconPath": "/images/tabBar/my.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "navigationStyle": "default"
+}

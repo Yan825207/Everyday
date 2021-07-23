@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="topBig">
+    <image mode="widthFix" src="/images/banner1.png"></image>
+  </view>
+  <!-- 快递 -->
+  <view class="expressage">
+  <!-- 门店自取 -->
+    <view class="cat">
+      <image src="/images/store.png"></image>
+      <h2>门店自取</h2>
+      <text>下单免排队</text>
+    </view>
+    <!-- 外卖 -->
+    <view>
+      <image src="/images/car.png"></image>
+      <h2>外卖</h2>
+      <text>无需接触，送喜到家</text>
+    </view>
+  </view>
+  <view class="classify"> 
+    <view>
+      <h2>喜茶百货</h2>
+      <text>新装气泡水畅饮更尽兴</text>
+    </view>
+    <view>
+      <h2>阿喜团餐</h2>
+      <text>最高9折火热预订中</text>
+    </view>
+  </view>
+  <view class="buttom">
+    <view class="integral">
+      <h2>我的积分 22</h2>
+      <text>可兑换喜茶券和丰富灵感周边</text>
+    </view>
+    <view class="member">
+      <text>会员码</text>
+    </view>
+  </view>
+</view>

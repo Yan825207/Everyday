@@ -1,0 +1,171 @@
+/**index.wxss**/
+/* 字体图标 */
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1613478691340'); /* IE9 */
+  src: url('iconfont.eot?t=1613478691340#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+  url('iconfont.woff?t=1613478691340') format('woff'),
+  url('iconfont.ttf?t=1613478691340') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1613478691340#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon:before {
+  content: "\e63e";
+}
+
+.icon-shouye:before {
+  content: "\e658";
+}
+
+.icon-beizi:before {
+  content: "\e61c";
+}
+
+.icon-icon-:before {
+  content: "\e618";
+}
+
+.icon-wode:before {
+  content: "\e694";
+}
+
+
+/*  */
+
+.container{
+  /* background: #ccc; */
+  height: 100%;
+}
+.topBig{
+  width: 100%; 
+}
+.topBig image{
+  width: 100%;
+  display: block;  
+  /* background: #ccc; */
+}
+.expressage{
+  position: relative;
+  top: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 688rpx;
+  height: 370rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 10rpx 10rpx 0rpx 0 rgb(250, 249, 249);
+
+}
+.expressage view{
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  margin-top: 88rpx;
+}
+.expressage .cat::after{
+  content: "";
+  position: absolute;
+  top: -30rpx;
+  right: 0;
+  width:2rpx;
+  height: 240rpx;
+  background-color: #f2f2f2;
+}
+
+.expressage view image{
+  width: 87rpx; 
+  height: 104rpx;
+}
+
+.expressage view h2{
+  display: block;
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-top: 18rpx;
+  margin-bottom: 10rpx;
+}
+.expressage view text{
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.classify{
+  width: 688rpx;
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.classify view{
+  flex: 1;
+  height: 146rpx;
+  border-radius: 20rpx;
+  background-color: #EAEBEC;
+}
+.classify :first-child{
+  margin-right: 20rpx;
+}
+.classify view h2{
+  position: relative;
+  display: block;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+}
+.classify :first-child h2::after{
+  content:"";
+  /* position: absolute; */
+  display: inline-block;
+  top: 0;
+  left: 28rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: red;
+  background: url(/images/gift.png) no-repeat;
+}
+.classify text{
+  font-size: 24rpx;
+  color: #AAAAAA;
+}
+.buttom{
+  width: 688rpx;
+  position: relative;
+   left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-top: 40rpx;
+}
+.buttom h2{
+  display: block;
+  font-size: 30rpx;
+  font-weight: bold;
+
+}
+.integral {
+  display: inline-block;
+  width:562rpx;
+  text-align: left;
+  /* border: 1px solid red; */
+}
+.member{
+  display: inline-block;
+}
+.integral text{
+  font-size: 24rpx;
+  color: #7f7f7f;
+  margin-top: 20rpx;
+}
+.member text{
+  font-size: 26rpx;
+  color: #7f7f7f;
+}
