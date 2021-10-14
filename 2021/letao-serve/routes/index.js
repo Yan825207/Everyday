@@ -1,19 +1,13 @@
 const router = require('koa-router')()
-
-router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello Koa 2!'
-  })
+const {
+  gridlist,
+  banners,
+  sports
+} = require("../controller/index")
+router.get("/", async (ctx) => {
+  ctx.body = "HELLO"
 })
-
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
-
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
-  }
-})
-
+router.get("/gridlist", gridlist)
+router.get("/banners", banners)
+router.get("/sports", sports)
 module.exports = router
