@@ -11,6 +11,12 @@ const Joi = require("joi")
 const {
     repeatregister
 } = require("../model/repeatregister")
+// 导入jsonwebtoken
+var jwt = require('jsonwebtoken');
+// 导入token加密字符
+const {
+    tokenStr
+} = require("../config/index")
 // 注册功能
 module.exports.register = async (ctx) => {
     // 接收参数
@@ -71,9 +77,17 @@ module.exports.login = async (ctx) => {
         password
     } = ctx.request.body
     const result = await login(username, cryptoPassword(password + process.env.crypto))
+
     if (result[0]) {
+        const token = jwt.sign({
+            username,
+            password
+        }, tokenStr, {
+            expiresIn: "1h"
+        });
         ctx.body = {
             status: 200,
+            token: token,
             message: "登陆成功"
         }
     } else {
