@@ -16,9 +16,7 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 const category = require("./routes/category")
 const sms = require('./routes/sms')
-const {
-  login
-} = require('./model/users')
+const order = require("./routes/order")
 
 
 
@@ -41,7 +39,7 @@ app.use(function (ctx, next) {
 app.use(jwt({
   secret: tokenStr
 }).unless({
-  path: [/^\/public/, /^\/users\/login/]
+  path: [/^\/public/, /^\/users\/login/, /^\/order/]
 }));
 
 // middlewares
@@ -69,6 +67,7 @@ app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(category.routes(), category.allowedMethods())
 app.use(sms.routes(), sms.allowedMethods())
+app.use(order.routes(), order.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
