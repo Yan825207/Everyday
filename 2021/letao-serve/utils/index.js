@@ -4,6 +4,8 @@ const axios = require("axios")
 const {
     key
 } = require("../config/wx")
+// 解析xml格式
+const xml = require("xml2js");
 // 传入需要加密的字段
 module.exports.cryptoPassword = (password) => {
     // 返回加密完成的字段
@@ -118,8 +120,19 @@ module.exports.createOrder = (url, data) => {
             method: "POST",
             data
         })
-        console.log(res, "-- -");
-        resolve(res)
+
+        xml.parseString(res.data, function (err, res) {
+            const {
+                return_code,
+                return_msg,
+                result_code
+            } = res.xml
+            if (return_code == "SUCCESS" && result_code == "SUCCESS" && return_msg == "OK") {
+                resolve(res.xml)
+            } else {
+                reject(err)
+            }
+        })
     })
 
 }

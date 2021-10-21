@@ -10,6 +10,7 @@ const {
     notify_url,
     createOrder
 } = require("../utils/index")
+const QRcode = require("qrcode")
 module.exports.order = async (ctx) => {
     const {
         body,
@@ -46,6 +47,16 @@ module.exports.order = async (ctx) => {
                 </xml>
        `
     const data = await createOrder(orderUrl, sendData);
+    const {
+        return_code,
+        return_msg,
+        result_code,
+        code_url
+    } = data
+    // 下单成功
+    if (return_code == "SUCCESS" && result_code == "SUCCESS" && return_msg == "OK") {
+        data.payUrl = await QRcode.toDataURL(code_url)
+    }
     ctx.body = {
         status: 200,
         data
