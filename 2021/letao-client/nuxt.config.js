@@ -22,6 +22,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "~plugins/vant",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,10 +34,27 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    
+    "@nuxtjs/axios",
+    '@nuxtjs/proxy'
   ],
-
+  axios: {
+    proxy: true,
+    prefix: "/api"
+  },
+  // 配置代理
+  proxy: {
+    '/api': {
+      target: 'http://localhost:3001',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
+  server: {
+    ip: "localhost", //ip/域名,
+    port: "8080"
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
 }

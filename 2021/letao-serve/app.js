@@ -6,17 +6,26 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const jwt = require("koa-jwt")
+// 解决跨域
+const cors = require("koa-cors")
 // 导入token加密字符
 const {
   tokenStr
 } = require("./config/index")
+const xmlParser = require("koa-xml-body")
+
 // 启动dotenv
 require('dotenv').config()
+
+app.use(xmlParser())
+// 后端解决跨域问题
+app.use(cors())
 const index = require('./routes/index')
 const users = require('./routes/users')
 const category = require("./routes/category")
 const sms = require('./routes/sms')
 const order = require("./routes/order")
+const banners = require("./routes/banners")
 
 
 
@@ -24,23 +33,23 @@ const order = require("./routes/order")
 onerror(app)
 
 // 登录拦截  ------必须卸载路由之前
-//  koa-jwt  如果请求头中没有token这返回401
-app.use(function (ctx, next) {
-  return next().catch((err) => {
-    if (401 == err.status) {
-      ctx.status = 401;
-      ctx.body = 'Protected resource, use Authorization header to get access\n';
-    } else {
-      throw err;
-    }
-  });
-});
+// koa - jwt  如果请求头中没有token这返回401
+// app.use(function (ctx, next) {
+//   return next().catch((err) => {
+//     if (401 == err.status) {
+//       ctx.status = 401;
+//       ctx.body = 'Protected resource, use Authorization header to get access\n';
+//     } else {
+//       throw err;
+//     }
+//   });
+// });
 // 设置那些接口不需要token
-app.use(jwt({
-  secret: tokenStr
-}).unless({
-  path: [/^\/public/, /^\/users\/login/, /^\/order/]
-}));
+// app.use(jwt({
+//   secret: tokenStr
+// }).unless({
+//   path: [/^\/public/, /^\/users\/login/]
+// }));
 
 // middlewares
 app.use(bodyparser({
@@ -68,6 +77,7 @@ app.use(users.routes(), users.allowedMethods())
 app.use(category.routes(), category.allowedMethods())
 app.use(sms.routes(), sms.allowedMethods())
 app.use(order.routes(), order.allowedMethods())
+app.use(banners.routes(), banners.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
