@@ -1,13 +1,15 @@
+const { getAllUser } = require("../controller/user")
+
 const router = require('koa-router')()
 
 router.prefix('/users')
 
-router.get('/', function (ctx, next) {
-  ctx.body = 'this is a users response!'
-})
+router.get('/', async (ctx, next) => {
+  const result = getAllUser()
 
-router.get('/bar', function (ctx, next) {
-  ctx.body = 'this is a users/bar response'
+  const res = await query("select * from users")
+  console.log(res);
+  await ctx.render("users")
 })
 
 module.exports = router

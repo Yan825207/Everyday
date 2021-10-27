@@ -48,7 +48,7 @@ onerror(app)
 // app.use(jwt({
 //   secret: tokenStr
 // }).unless({
-//   path: [/^\/public/, /^\/users\/login/]
+//   path: [/^\/public/, /^\/users\/login/, /^\/users\/register/]
 // }));
 
 // middlewares

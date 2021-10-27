@@ -10,18 +10,31 @@
       <!-- 品牌组件 -->
       <IndexBrand></IndexBrand>
       <!-- 活动专区 -->
-      <IndexSport></IndexSport>
+      <IndexSport :sports="sports"></IndexSport>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData({ $axios }) {
-    const { swiperList } = await $axios.$get('/banners')
-    const { gridlist } = await $axios.$get('/gridlist')
-    const { sports } = await $axios.$get('/sports')
+  async asyncData({ $api }) {
+    // const { swiperList } = await $axios.$get('/banners')
+    // const { gridlist } = await $axios.$get('/gridlist')
+    // const { sports } = await $axios.$get('/sports')
 
+    // const { swiperList } = await $request.$get('/banners')
+    // const { gridlist } = await $request.$get('/gridlist')
+    // const { sports } = await $request.$get('/sports')
+
+    // const { swiperList } = await $api.IndexBanner()
+    // const { gridlist } = await $api.IndexGrid()
+    // const { sports } = await $api.IndexSport()
+
+    const [{ swiperList }, { gridlist }, { sports }] = await Promise.all([
+      $api.IndexBanner(),
+      $api.IndexGrid(),
+      $api.IndexSport()
+    ])
     return {
       swiperList,
       gridlist,
