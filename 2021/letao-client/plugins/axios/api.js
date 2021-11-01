@@ -20,6 +20,14 @@ export default ({ $request }, inject) => {
     // 二级分类接口
     TwoCategory(cid) {
       return $request.$get(`/twocategory?id=${cid}`)
+    },
+    // 短信验证接口
+    smsCode(mobile) {
+      return $request.$post("/sendsms", { mobile })
+    },
+    // 注册接口
+    register(data) {
+      return $request.$post("/users/register", data)
     }
   })
 }

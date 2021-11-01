@@ -17,11 +17,12 @@ module.exports.register = async (ctx) => {
         password,
         mobile
     } = ctx.request.body;
+    console.log(username, mobile);
     // 定义规则
     const schema = Joi.object({
         username: Joi.string()
-            .min(2)
-            .max(6)
+            .min(4)
+            .max(20)
             .required(),
         password: Joi.string()
             .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
@@ -39,7 +40,7 @@ module.exports.register = async (ctx) => {
     if (verify.error) {
         ctx.body = {
             status: 0,
-            msg: verify.error.details[0].message
+            message: verify.error.details[0].message
         }
         return
     }
@@ -51,13 +52,18 @@ module.exports.register = async (ctx) => {
             status: 0,
             message: "已注册,请勿重复注册"
         }
-
         return
     }
-    // 注册
+    // 注册 
+    // console.log(mobile);
     const result = await register(username, cryptoPassword(password + process.env.crypto), mobile)
     ctx.body = {
         status: 200,
-        msg: "访问成功"
+        message: "注册成功",
+        userinfo: {
+            mobile,
+            username,
+        }
+
     }
 }
