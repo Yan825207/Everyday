@@ -2,7 +2,7 @@
   <div>
     <!-- 头部 -->
     <header>
-      <van-nav-bar :title="title" left-text="返回" left-arrow>
+      <van-nav-bar :title="title" left-text="返回" left-arrow @click-left="back">
         <template #right>
           <van-icon name="search" size="18" />
         </template>
@@ -16,9 +16,9 @@
     <footer>
       <van-tabbar v-model="active">
         <van-tabbar-item name="index " icon="home-o" to="/">首页</van-tabbar-item>
-        <van-tabbar-item name="category" icon="bag-o" to="category">分类</van-tabbar-item>
-        <van-tabbar-item name="cart" icon="cart-o" to="cart">购物车</van-tabbar-item>
-        <van-tabbar-item name="my" icon="friends-o" to="my">我的</van-tabbar-item>
+        <van-tabbar-item name="category" icon="bag-o" to="/category">分类</van-tabbar-item>
+        <van-tabbar-item name="cart" icon="cart-o" to="/cart">购物车</van-tabbar-item>
+        <van-tabbar-item name="my" icon="friends-o" to="/my">我的</van-tabbar-item>
       </van-tabbar>
     </footer>
   </div>
@@ -45,6 +45,10 @@ export default {
         cart: '乐淘-购物车',
         my: '乐淘-我的'
       }[this.$route.name]
+    },
+    // 返回
+    back() {
+      this.$router.go(-1)
     }
   },
   watch: {

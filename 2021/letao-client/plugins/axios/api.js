@@ -28,6 +28,15 @@ export default ({ $request }, inject) => {
     // 注册接口
     register(data) {
       return $request.$post("/users/register", data)
+    },
+    // 登录接口
+    Login(data) {
+      console.log(data);
+      return $request.$post("/users/login", data)
+    },
+    // 下单接口
+    Order(data) {
+      return $request.$post("/order", data)
     }
   })
 }

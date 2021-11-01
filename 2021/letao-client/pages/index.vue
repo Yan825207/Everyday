@@ -30,11 +30,12 @@ export default {
     // const { gridlist } = await $api.IndexGrid()
     // const { sports } = await $api.IndexSport()
 
-    const [{ swiperList }, { gridlist }, { sports }] = await Promise.all([
-      $api.IndexBanner(),
-      $api.IndexGrid(),
-      $api.IndexSport()
-    ])
+    const [{ swiperList = [] }, { gridlist = [] }, { sports = [] }] =
+      await Promise.all([
+        $api.IndexBanner(),
+        $api.IndexGrid(),
+        $api.IndexSport()
+      ])
     return {
       swiperList,
       gridlist,

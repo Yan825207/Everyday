@@ -34,22 +34,22 @@ onerror(app)
 
 // 登录拦截  ------必须卸载路由之前
 // koa - jwt  如果请求头中没有token这返回401
-// app.use(function (ctx, next) {
-//   return next().catch((err) => {
-//     if (401 == err.status) {
-//       ctx.status = 401;
-//       ctx.body = 'Protected resource, use Authorization header to get access\n';
-//     } else {
-//       throw err;
-//     }
-//   });
-// });
+app.use(function (ctx, next) {
+  return next().catch((err) => {
+    if (401 == err.status) {
+      ctx.status = 401;
+      ctx.body = 'Protected resource, use Authorization header to get access\n';
+    } else {
+      throw err;
+    }
+  });
+});
 // 设置那些接口不需要token
-// app.use(jwt({
-//   secret: tokenStr
-// }).unless({
-//   path: [/^\/public/, /^\/users\/login/, /^\/users\/register/]
-// }));
+app.use(jwt({
+  secret: tokenStr
+}).unless({
+  path: [/^\/public/, /^\/users\/login/, /^\/users\/register/]
+}));
 
 // middlewares
 app.use(bodyparser({

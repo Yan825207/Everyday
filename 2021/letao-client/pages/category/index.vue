@@ -6,11 +6,7 @@
     @click-nav="() => handleChange(active)"
   >
     <template #content>
-      <div
-        class="category_sencond"
-        v-for="item in TwoCategoryList"
-        :key="item.id"
-      >
+      <div class="category_sencond" v-for="item in TwoCategoryList" :key="item.id">
         <van-image width="4rem" :src="item.brandLogo" />
         <p>{{ item.brandName }}</p>
       </div>
@@ -23,41 +19,41 @@ export default {
   data() {
     return {
       active: 0
-    };
+    }
   },
   async asyncData({ $api }) {
     // asyncData在data之前,无法拿到data中的数据,要获取active可以在asyncData中定义,最会会和data合并
-    let active = 0;
+    let active = 0
     // 获取一级分类数据
-    let { results } = await $api.OneCategory();
+    let { oneCategoryList = [] } = await $api.OneCategory()
     // 整理数据
-    const oneCategoryList = results.map(element => {
+    oneCategoryList = oneCategoryList.map((element) => {
       return {
         text: element.categoryName,
         ...element
-      };
-    });
-
+      }
+    })
+    if (!oneCategoryList.length) return
     // 获取二级分类数据
-    let res = await $api.TwoCategory(oneCategoryList[active]["id"]);
+    let res = await $api.TwoCategory(oneCategoryList[active]['id'])
 
     return {
       active,
       oneCategoryList,
       TwoCategoryList: res.results
-    };
+    }
   },
   methods: {
     // 点击左边标签栏切换
     async handleChange(active) {
       // 获取二级分类数据
       let { results } = await this.$api.TwoCategory(
-        this.oneCategoryList[active]["id"]
-      );
-      this.TwoCategoryList = results;
+        this.oneCategoryList[active]['id']
+      )
+      this.TwoCategoryList = results
     }
   }
-};
+}
 </script>
 
 <style>

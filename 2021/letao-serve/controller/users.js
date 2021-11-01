@@ -72,6 +72,7 @@ module.exports.register = async (ctx) => {
 
 // 登录功能
 module.exports.login = async (ctx) => {
+    console.log("demng``````````````");
     const {
         username,
         password
@@ -88,6 +89,8 @@ module.exports.login = async (ctx) => {
         ctx.body = {
             status: 200,
             token: token,
+            username,
+            mobile: result[0].mobile,
             message: "登陆成功"
         }
     } else {

@@ -12,7 +12,7 @@ export const verify = {
   password(pas, repeatpas) {
     if (!pas) return ("请输入密码")
     if (!/^[a-zA-Z0-9]{6,20}$/.test(pas.trim())) {
-      return ("请输入4到20个字符的密码")
+      return ("请输入6到20个字符的密码")
     }
     // 用repeatpas来判断登录还是注册
     if (!repeatpas) return

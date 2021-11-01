@@ -144,6 +144,7 @@ export default {
       this.$router.push('/user/login')
       // 将用户信息保存到vuex中
       this.$store.commit('updateUserInfo', userinfo)
+      console.log(userinfo)
     }
   }
 }

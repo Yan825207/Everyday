@@ -10,7 +10,7 @@
             <span class="price">¥{{item.price}}</span>
             <span class="oldPrice">¥{{item.oldPrice}}</span>
           </p>
-          <button class="button">立即购买</button>
+          <button class="button" @click.prevent="goPay(item)">立即购买</button>
         </div>
       </a>
     </div>
@@ -18,7 +18,13 @@
 </template>
 <script>
 export default {
-  props: ['sports']
+  props: ['sports'],
+  methods: {
+    goPay(item) {
+      // 跳转支付页面并传参
+      this.$router.push(`/pay?name=${item.name}&price=${item.price}`)
+    }
+  }
 }
 </script>
 <style scoped>

@@ -8,6 +8,8 @@ export default function ({ $axios, redirect, store }, inject) {
     if (store.state.token) {
       // 添加请求头
       $axios.setHeader('Authorization', `Bearer ${store.state.token}`);
+    } else {
+      $axios.setHeader("Authorization", "")
     }
     return config
   })
@@ -32,6 +34,8 @@ export default function ({ $axios, redirect, store }, inject) {
     } else if (code === 401) {
       // 401代表未登录, 没有限权, 需要重定向到登录页面
       redirect("/user/login")
+      // 返回空的响应
+      return Promise.resolve(false)
     }
   })
 
