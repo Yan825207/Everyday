@@ -6,10 +6,7 @@ router.prefix('/users')
 
 router.get('/', async (ctx, next) => {
   const result = getAllUser()
-
-  const res = await query("select * from users")
-  console.log(res);
-  await ctx.render("users")
+  await ctx.render("users", result)
 })
 
 module.exports = router
